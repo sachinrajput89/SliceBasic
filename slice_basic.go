@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
 
@@ -22,5 +25,44 @@ func main() {
 
 	slicea := []string{"a", "b", "c", "d", "e"}
 	fmt.Println(slicea)
+
+	//=======================================================
+
+	//few more slices from array
+
+	myarr := [...]string{"a", "b", "c", "d", "e", "f", "g", "h"}
+
+	myslice0 := myarr[2:]
+	myslice1 := myarr[:3]
+	myslice2 := myarr[:]
+
+	fmt.Println(myslice0)
+	fmt.Println(myslice1)
+	fmt.Println(myslice2)
+	//===========================================================
+
+	//using range in slice
+	myrangeslice := []string{"i", "j", "k", "l", "m"}
+
+	for index, ele := range myrangeslice {
+
+		fmt.Println(index, ele)
+	}
+
+	//===============================================================
+
+	//sorting a slice
+
+	unsortarray := []string{"r", "l", "z", "u", "e", "g", "a"}
+	unsortedint := []int{3, 5, 6, 1, 7, 8}
+
+	fmt.Println(unsortarray)
+	fmt.Println(unsortedint)
+
+	sort.Strings(unsortarray)
+	sort.Ints(unsortedint)
+
+	fmt.Println(unsortarray)
+	fmt.Println(unsortedint)
 
 }
